@@ -1,0 +1,43 @@
+@page "/convert"
+
+<h3>Konverteringssida</h3>
+
+<!-- Sektioner där användaren kan konvertera -->
+<div>
+    <h4>Meter till Fot (Feet)</h4>
+    <!-- användaren anger meter-->
+    <input @bind="Meters" type="number" placeholder="Ange meter" />
+    <button @onclick="ConvertMetersToFeet">Konvertera</button>
+    <!-- resultatet visas på skärmen -->
+    <p>Resultat: @FeetResult fot</p>
+</div>
+
+<div>
+    <h4>Km/h till Miles/hour</h4>
+    <!-- användaren anger hastighet i km/h -->
+    <input @bind="KilometersPerHour" type="number" placeholder="Ange km/h" />
+    <button @onclick="ConvertKmHToMph">Konvertera</button>
+    <!-- resultatet visas på skärmen -->
+    <p>Resultat: @MilesPerHourResult miles/hour</p>
+</div>
+
+@code {
+    // Variabler för konvertering
+    private double Meters { get; set; }
+    private string FeetResult { get; set; } = "0"; // Sätter startvärde till 0
+
+    private double KilometersPerHour { get; set; }
+    private int MilesPerHourResult { get; set; } = 0; // Sätter startvärde till 0
+
+    // Metod för att konvertera meter till fot
+    private void ConvertMetersToFeet()
+    {
+        FeetResult = Math.Round(Meters * 3.28084, 1).ToString("0.0"); // 1 meter = 3.28084 fot, avrundar till 1 decimal
+    }
+
+    // Metod för att konvertera km/h till miles/hour
+    private void ConvertKmHToMph()
+    {
+        MilesPerHourResult = (int)Math.Round(KilometersPerHour * 0.621371); // 1 km/h = 0.621371 miles/hour, avrundar till heltal
+    }
+}
