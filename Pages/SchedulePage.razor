@@ -1,0 +1,47 @@
+@page "/schedule"
+@inject HttpClient Http
+
+<h2>Ramschema</h2>
+
+@if (schedule == null) {
+    <p>Laddar ramschema...</p>
+} else {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Kurskod:</th>
+                <th>Kursnamn:</th>
+                <th>Progression:</th>
+                <th>Kursplan:</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in schedule) {
+                <tr>
+                    <td>@course.Code</td>
+                    <td>@course.CourseName</td>
+                    <td>@course.Progression</td>
+                    <td><a href="@course.Syllabus" target="_blank">kursplan</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Array för kurser
+    private Schedule[]? schedule;
+
+    // Http-anrop
+    protected override async Task OnInitializedAsync() {
+        schedule = await Http.GetFromJsonAsync<Schedule[]>("https://dahlgren.miun.se/ramschema.php");
+    }
+
+    // Model för ramschema
+    public class Schedule {
+        public string? Code { get; set; }
+        public string? CourseName { get; set; }
+        public string? Progression { get; set; }
+        public string? Syllabus { get; set; }
+    }
+}
