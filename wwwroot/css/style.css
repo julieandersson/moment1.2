@@ -99,7 +99,7 @@ footer a:hover {
 .convert {
     background-color: white;
     padding: 20px;
-    margin: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -135,4 +135,55 @@ button {
 
 button:hover {
     background-color: #425e32;
+}
+
+/* Styling för tabellen */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* tabellhuvud */
+.table thead {
+    background-color: #a5be8d;
+    color: white;
+}
+
+.table thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddead1;
+}
+
+/* tabellrader */
+.table tbody tr {
+    border-bottom: 1px solid #ddead1;
+}
+
+.table tbody tr:hover {
+    background-color: #e1ecd4;
+}
+
+/* tabellceller */
+.table tbody td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* kursplanslänkar */
+.table tbody td a {
+    color: #2e471f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table tbody td a:hover {
+    text-decoration: underline;
 }
