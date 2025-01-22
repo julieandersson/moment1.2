@@ -1,0 +1,25 @@
+<div>
+    <!-- utskrift till skärm-->
+    <p>Dagens datum: @currentDateTime</p>
+</div>
+
+@code {
+    private string? currentDateTime;
+
+    protected override void OnInitialized()
+    {
+        // inititerar den försa värdet för datum och tid
+        currentDateTime = DateTime.Now.ToString("yyyy-MM-dd kl HH:mm:ss");
+        // startar en timer som uppdaterar tiden varje sekund
+        var timer = new System.Timers.Timer(1000);
+        // körs varje gång timern "tickar"
+        timer.Elapsed += (sender, e) =>
+        {
+            // uppddaterar det aktuella datumet och tiden
+            currentDateTime = DateTime.Now.ToString("yyyy-MM-dd kl HH:mm:ss");
+            InvokeAsync(StateHasChanged);
+        };
+        //startar timern så att den tickar på skärmen
+        timer.Start();
+    }
+}
