@@ -259,4 +259,13 @@ img {
         padding: 10px;
         font-size: 0.9em;
     }
+
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table {
+        width: 750px;
+    }
 }
