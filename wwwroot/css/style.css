@@ -268,4 +268,56 @@ img {
     .table {
         width: 750px;
     }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+
+    .logo {
+        font-size: 1.1em;
+    }
+
+    #main-header nav ul {
+        font-size: 1em;
+        gap: 10px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p, ul {
+        font-size: 0.9em;
+    }
+
+    .convert {
+        padding: 10px;
+    }
+
+    input[type="number"] {
+        width: 95%;
+    }
+
+    button {
+        width: 98%;
+    }
+
+    .table {
+        width: 600px;
+        font-size: 0.9em;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
