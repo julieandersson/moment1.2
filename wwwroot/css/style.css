@@ -42,11 +42,6 @@ body {
     width: 100%;
 }
 
-#main-header h1 {
-    margin: 0;
-    font-size: 1.8em
-}
-
 #main-header nav ul {
     list-style: none;
     padding: 0;
@@ -215,4 +210,37 @@ img {
     max-width: 100%;
     height: auto;
     margin-top: 20px;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+@media (max-width: 849px) {
+
+    .logo {
+        font-size: 1.2em;
+    }
+
+    #main-header {
+        height: 80px;
+        padding: 0 15px;
+    }
+
+    #main-header nav ul {
+        font-size: 1.1em;
+        gap: 10px;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    main {
+        padding: 20px;
+        margin: 10px auto;
+    }
 }
