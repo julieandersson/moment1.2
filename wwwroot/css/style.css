@@ -5,7 +5,6 @@ body {
     margin: 0;
     background-color: #ddead1;
     font-family: "Noto Sans", serif;
-    font-size: 1em;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -69,6 +68,23 @@ body {
 
 #main-header nav ul li a:hover {
     color: white;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+p, ul {
+    line-height: 1.8em;
+    font-size: 1em;
+}
+
+.date p {
+    font-style: italic;
 }
 
 main {
